@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/blog/4a17b156/"/>
+      <url>/blog/4a17b156/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>xui+argo部署节点教程</title>
+      <link href="/blog/5367aadf/"/>
+      <url>/blog/5367aadf/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>woiden是继hax后的免费服务器站点。本教程正是基于此，通过xui+argo的方式部署vless节点。</p><h1 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h1><p>1.一台VPS<br>2.一个域名<br>3.一个Cloudflare账号</p><h1 id="部署实操"><a href="#部署实操" class="headerlink" title="部署实操"></a>部署实操</h1><p>1.安装xui面板</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh)</span><br></pre></td></tr></table></figure><div class="note info simple"><p>如提示超出github api限制，请安装warp</p></div><p>2.安装argo脚本并配置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/taffychan/argo/main/argo.sh &amp;&amp; bash argo.sh</span><br></pre></td></tr></table></figure><p>3.新建一个节点</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 云服务器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 节点 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>哪吒探针部署教程</title>
+      <link href="/blog/20155961/"/>
+      <url>/blog/20155961/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当你苦于管理多个云服务器时，看看哪吒探针吧。哪吒监控，一个开源、轻量的服务器和网站监控、运维工具。</p><h1 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h1><p>1.一台VPS<br>2.一个域名<br>3.一个Github&#x2F;Gitee账号</p><h1 id="部署实操"><a href="#部署实操" class="headerlink" title="部署实操"></a>部署实操</h1><p>1.托管域名至cloudflare，并对其进行解析。</p><div class="note info simple"><p>一个打开小云朵用作公开访问，另一个域名不要打开小云朵，用作Agent端与Dashboard的通信<br>本教程分别以 “cdn.example.com” 和 “data.example.com” 两个域名来演示。<br>两个先都别打开小云朵</p></div><p>2.登录github，打开<a href="https://github.com/settings/apps">开发者设置</a>，新建一个outh应用，记下Client ID 和 Client secret。<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/002.png"><br>3.打开FinalShell，连接服务器，安装面板。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh  -o nezha.sh &amp;&amp; chmod +x nezha.sh &amp;&amp; sudo ./nezha.sh</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/003.png"><br>4.现在你可以访问域名+端口号，如 “<a href="http://cdn.example.com:8008”">http://cdn.example.com:8008”</a> 来查看面板</p><div class="note blue icon simple"><i class="note-icon fas fa-bullhorn"></i><p>此时会提示连接不安全以及需要输入端口号</p></div><p>5.打开宝塔面板，添加公开访问域名，如 “cdn.example.com“，添加一个ssl证书，并配置反向代理。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">location /</span><br><span class="line">&#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8008;</span><br><span class="line">    proxy_set_header Host $host;</span><br><span class="line">&#125;</span><br><span class="line">location /ws</span><br><span class="line">&#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8008;</span><br><span class="line">    proxy_http_version 1.1;</span><br><span class="line">    proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    proxy_set_header Connection &quot;Upgrade&quot;;</span><br><span class="line">    proxy_set_header Host $host;</span><br><span class="line">&#125;</span><br><span class="line">location /terminal</span><br><span class="line">&#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8008;</span><br><span class="line">    proxy_http_version 1.1;</span><br><span class="line">    proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    proxy_set_header Connection &quot;Upgrade&quot;;</span><br><span class="line">    proxy_set_header Host $host;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>6.返回github，将Homepage URL”和”Authorization callback URL”中的域名全部从http改为https，如：”<a href="https://cdn.example.com&quot;/">https://cdn.example.com&quot;</a> 和 “<a href="https://cdn.example.com/oauth2/callback&quot;">https://cdn.example.com/oauth2/callback&quot;</a> 。<br>7.登录面板，添加一台服务器，并建立连接<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/004.png"></p><div class="note blue icon simple"><i class="note-icon fas fa-bullhorn"></i><p>此时服务器还未连接</p></div><p>将未打开小云朵的域名填入图示地方，找到一键安装命令，拷贝左边这个，粘贴至服务器上安装。<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/005.png"><br>8.设置通知方式，添加报警通知<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/006.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/007.png"><br>至此，部署完成<br>参考资料：<a href="https://nezhahq.github.io/guide/dashboard.html">https://nezhahq.github.io/guide/dashboard.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 建站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 哪吒探针 </tag>
+            
+            <tag> 服务器监控 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Speedtest项目搭建教程</title>
+      <link href="/blog/8cc78405/"/>
+      <url>/blog/8cc78405/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h1><p>1.一个域名<br>2.一台vps</p><h1 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h1><p>1.连接vps，安装宝塔面板<br>Centos安装宝塔面板脚本：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://v7.hostcli.com/install/install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure><p>ubuntu安装宝塔面板脚本：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://v7.hostcli.com/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure><div class="note info simple"><p>记得放行8888端口</p></div><p>2.打开<a href="https://dash.cloudflare.com/">cloudflare</a>,添加一个站点并增加一条A记录解析</p><div class="note info simple"><p>不要打开小云朵哦</p></div><p><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/Speedtest-X/speedtest%E6%B5%8B%E9%80%9F%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E5%9B%BE%E7%89%872.png"><br>3.下载<a href="https://github.com/BadApple9/speedtest-x/archive/refs/tags/20201222.zip">speedtest源码</a>并解压<br>4.打开宝塔面板，输入账号密码登录，单击网站并添加站点，输入解析好的域名，其他默认<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/Speedtest-X/speedtest%E6%B5%8B%E9%80%9F%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E5%9B%BE%E7%89%875.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/Speedtest-X/speedtest%E6%B5%8B%E9%80%9F%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E5%9B%BE%E7%89%873.png"></p><div class="note blue icon simple"><i class="note-icon fas fa-bullhorn"></i><p>忘记账号密码可以在VPS输入bt default</p></div><p>5.打开网站，添加ssl证书，选上强制ssl<br>6.点击文件，找到网站文件夹，删除原有的内容，将解压后的文件粘贴到此处<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/Speedtest-X/speedtest%E6%B5%8B%E9%80%9F%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E5%9B%BE%E7%89%874.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/%E5%BB%BA%E7%AB%99/Speedtest-X/speedtest%E6%B5%8B%E9%80%9F%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E5%9B%BE%E7%89%876.png"><br>7.将example-singleServer-pretty.html文件重命名为index.html，至此测速站完成搭建</p><div class="note red icon simple"><i class="note-icon fas fa-fan"></i><p>如需自定义，可以对index.html文件编辑</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 建站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Speedtest </tag>
+            
+            <tag> 测速 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CloudFlare支持的HTTP/HTTPS代理端口</title>
+      <link href="/blog/b0a089cf/"/>
+      <url>/blog/b0a089cf/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在使用宝塔的服务器，配置了CF的CDN后，通过域名加端口方式想访问宝塔面板，可能就会访问不了，这是因为CF默认只开放部分端口，不是全端口开放。</p><p>对于一些在偏远地区、国内访问非常慢的机器，可能直接通过IP访问宝塔面板会非常慢，这个时候就可以考虑利用CF来加速宝塔面板，原理就是将宝塔的端口设置为CF支持的端口，然后使用套了CF CDN的域名+端口来访问，这个时候宝塔就能得到CF的加速了</p><p>下面我们来了解一下CloudFlare支持的HTTP&#x2F;HTTPS代理端口</p><h1 id="HTTP可用端口"><a href="#HTTP可用端口" class="headerlink" title="HTTP可用端口"></a>HTTP可用端口</h1><ul><li>80</li><li>8080</li><li>8880</li><li>2052</li><li>2082</li><li>2086</li><li>2095</li></ul><h1 id="HTTPS可用端口"><a href="#HTTPS可用端口" class="headerlink" title="HTTPS可用端口"></a>HTTPS可用端口</h1><ul><li>443</li><li>2053 </li><li>2083</li><li>2087</li><li>2096</li><li>8443</li></ul><p>参考资料：<a href="https://developers.cloudflare.com/fundamentals/get-started/network-ports/">https://developers.cloudflare.com/fundamentals/get-started/network-ports/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vps </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CloudFlare </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nginx反向代理教程</title>
+      <link href="/blog/f2895ff3/"/>
+      <url>/blog/f2895ff3/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Nginx（发音同“engine X”）是异步框架的网页服务器，也可以用作反向代理、负载平衡器和HTTP缓存。下面我就教大家利用反向代理实现域名访问网站。</p><h1 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h1><p>1.一台服务器<br>2.一个cloudflare账号<br>3.一个域名</p><h1 id="部署实操"><a href="#部署实操" class="headerlink" title="部署实操"></a>部署实操</h1><p>1.<a href="https://www.freenom.com/zh/index.html?lang=zh">申请一个域名</a>,并将其托管到<a href="https://dash.cloudflare.com/login">cloudflare</a>进行DNS解析。</p><div class="note info simple"><p>不要打开小云朵哟</p></div><p>2.打开FinalShell，连接云服务器，申请一个ssl证书</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sudo -i </span><br><span class="line">mkdir cert &amp;&amp; cd cert #创建证书文件夹，并进入证书文件夹</span><br><span class="line">curl https://get.acme.sh | sh #安装acme</span><br><span class="line">apt install socat #安装socat</span><br><span class="line">ln -s  /root/.acme.sh/acme.sh /usr/local/bin/acme.sh #添加软链接</span><br><span class="line">acme.sh --register-account -m my@example.com #注册账号</span><br><span class="line">ufw allow 80 #开放80端口</span><br><span class="line">acme.sh  --issue -d 你的域名  --standalone -k ec-256 #申请证书</span><br><span class="line">bash ~/.acme.sh/acme.sh --issue -d 你的域名 --standalone -k ec-256 --listen-v6 #申请证书</span><br><span class="line">acme.sh --installcert -d 你的域名 --ecc  --key-file   /root/cert/private.key   --fullchain-file /root/cert/public.crt #安装证书</span><br><span class="line">acme.sh --set-default-ca --server letsencrypt #切换 Let’s Encrypt</span><br><span class="line">acme.sh --set-default-ca --server buypass #切换切换 Buypass</span><br><span class="line">acme.sh --set-default-ca --server zerossl # 切换 ZeroSSL</span><br><span class="line">bash ~/.acme.sh/acme.sh --list #查看目前申请到的证书</span><br><span class="line">bash ~/.acme.sh/acme.sh --renew -d 你的域名 --force --ecc #手动续期证书</span><br><span class="line">openssl ecparam -genkey -name prime256v1 -out ca.key #生成私钥</span><br><span class="line">openssl req -new -x509 -days 36500 -key ca.key -out ca.crt  -subj &quot;/CN=bing.com&quot; #生成公钥</span><br></pre></td></tr></table></figure><div class="note blue icon simple"><i class="note-icon fas fa-bullhorn"></i><p>记得打开小云朵</p></div><p>3.安装Nginx</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install nginx -y</span><br></pre></td></tr></table></figure><p>4.配置Nginx</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure><p>Nginx配置(替换http{}里的内容):</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">   listen 443 ssl;</span><br><span class="line">   listen [::]:443 ssl;</span><br><span class="line"></span><br><span class="line">   server_name 你的域名;  </span><br><span class="line">   ssl_certificate       /root/cert/public.crt; </span><br><span class="line">   ssl_certificate_key   /root/cert/private.key;</span><br><span class="line">   ssl_session_timeout 1d;</span><br><span class="line">   ssl_session_cache shared:MozSSL:10m;</span><br><span class="line">   ssl_session_tickets off;</span><br><span class="line"></span><br><span class="line">   ssl_protocols         TLSv1.2 TLSv1.3;</span><br><span class="line">   ssl_ciphers           ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;</span><br><span class="line">   ssl_prefer_server_ciphers off;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">       proxy_redirect off;</span><br><span class="line">       proxy_pass http://127.0.0.1:10000;</span><br><span class="line">       proxy_http_version 1.1;</span><br><span class="line">       proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">       proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">       proxy_set_header Host $host;</span><br><span class="line">       proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">   listen 80;</span><br><span class="line">   server_name 你的域名;   </span><br><span class="line">   rewrite ^(.*)$ https://$&#123;server_name&#125;$1 permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>重新加载nginx配置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl reload nginx.service</span><br></pre></td></tr></table></figure><p>5.打开你的域名，看看效果吧</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vps </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+            <tag> 反代 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>甲骨文云刷实例教程</title>
+      <link href="/blog/f21377c6/"/>
+      <url>/blog/f21377c6/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>甲骨文云作为全球最大服务器供应商之一，在其推出“always free”套餐后，引起了大家的广泛关注，大家纷纷注册甲骨文云，导致一些热门地区出现缺货现象，下面我将教大家如何用脚本自动刷实例教程，先人一步享用甲骨文云。</p><h1 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h1><p>1.一个甲骨文云账号<br>2.一台服务器</p><h1 id="部署实操"><a href="#部署实操" class="headerlink" title="部署实操"></a>部署实操</h1><p>1.<a href="https://www.oracle.com/cn/cloud/sign-in.html">登录甲骨文云</a>，按照以下步骤获取配置信息。<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/002.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/003.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/004.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/005.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/006.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/007.png"><br>2.打开finalshell，登录vps，获取管理员权限,安装oci-help脚本。<br>ubuntux系统</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br><span class="line">sudo apt -get uddate</span><br><span class="line">sudo apt install curl</span><br><span class="line">mkdir oci-help &amp;&amp; cd oci-help</span><br><span class="line">wget https://github.com/lemoex/oci-help/releases/download/v2.2.0/oci-help-linux-amd64-v2.2.0.zip</span><br><span class="line">unzip oci-help-linux-amd64-v2.2.0.zip</span><br></pre></td></tr></table></figure><div class="note info simple"><p>cenos 系统类似，下面不再赘述</p></div><p>3.打开oci-help.ini文件，进行如下配置。<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/008.png"><br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/009.png"><br>4.添加电报机器人提醒。<br><img src="https://cdn.jsdelivr.net/gh/Altria002/blog-imgs@main/Pics/VPS/%E7%94%B2%E9%AA%A8%E6%96%87%E4%BA%91%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B/010.png"><br>5.运行oci-help脚本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./oci-help</span><br></pre></td></tr></table></figure><div class="note blue icon simple"><i class="note-icon fas fa-bullhorn"></i><p>此法的缺点是一直要打开服务器</p></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">screen -S oci-help </span><br><span class="line">./oci-help</span><br><span class="line">ctrl + a + d</span><br><span class="line">screen -ls</span><br></pre></td></tr></table></figure><p>5.到此oci-help脚本部署完成，接下来就耐心等待机器人的通知</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vps </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 甲骨文云 </tag>
+            
+            <tag> 注册实例 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
